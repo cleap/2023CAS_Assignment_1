@@ -269,13 +269,14 @@ def OWID():
     ax.set_ylabel("Count (Normalized)")
     ax.set_title("New COVID Cases and Hospital Patients by Day")
     plt.savefig("owid.pdf")
-    return
 
     if np.any(np.isnan(hospitilizations)):
         print("Something went wrong")
         return
     
-    foo(dic)
+    foo({"United States": dic["United States"], "World": dic["World"]}, plot=False)
+    foo({"Japan": dic["Japan"], "World": dic["World"]}, plot=False)
+    foo({"United States": dic["United States"], "US Hospital Patients": dic["US Hospital Patients"]}, plot=False)
 
     return
     counts, bins = np.histogram(sourceArray, bins="auto")
@@ -340,8 +341,8 @@ def OWID():
     plt.show()
 
 def main(path):
-#     SIMCoV()
-#     logmap()
+    SIMCoV()
+    logmap()
     OWID()
 
 if __name__=="__main__":
