@@ -1,0 +1,64 @@
+2023-02-13 18:48:28 SimCov version SimCov version 0.1.1.9cc77ef-dirty-branching_airways_3min_model built on 20230204_191356
+2023-02-13 18:48:28 _________________________
+2023-02-13 18:48:28 Compiler definitions:
+2023-02-13 18:48:28   _XOPEN_SOURCE=700
+2023-02-13 18:48:28   CONFIG_USE_COLORS
+2023-02-13 18:48:28   USE_BYTELL
+2023-02-13 18:48:28   MAX_VIRIONS=125000
+2023-02-13 18:48:28   MIN_VIRIONS=1e-10
+2023-02-13 18:48:28   BLOCK_PARTITION
+2023-02-13 18:48:28   MIN_BLOCKS_PER_PROC=1
+2023-02-13 18:48:28   AVERAGE_SUBSAMPLE
+2023-02-13 18:48:28 _________________________
+2023-02-13 18:48:28 Options:
+2023-02-13 18:48:28   dim =                         15000 15000 1
+2023-02-13 18:48:28   whole-lung-dim =              48000 40000 20000
+2023-02-13 18:48:28   timesteps =                   216005
+2023-02-13 18:48:28   infection-coords =            uniform:1
+2023-02-13 18:48:28   initial-infection =           999
+2023-02-13 18:48:28   incubation-period =           5000
+2023-02-13 18:48:28   apoptosis-period =            180
+2023-02-13 18:48:28   expressing-period =           900
+2023-02-13 18:48:28   infectivity =                 0.025
+2023-02-13 18:48:28   infectivity-multiplier =      1.0
+2023-02-13 18:48:28   virion-production =           1.1
+2023-02-13 18:48:28   virion-production-multiplier = 1.0
+2023-02-13 18:48:28   virion-clearance =            0.004
+2023-02-13 18:48:28   virion-diffusion =            0.15
+2023-02-13 18:48:28   chemokine-production =        1.0
+2023-02-13 18:48:28   chemokine-decay =             0.01
+2023-02-13 18:48:28   chemokine-diffusion =         1.0
+2023-02-13 18:48:28   min-chemokine =               1e-06
+2023-02-13 18:48:28   antibody-factor =             1
+2023-02-13 18:48:28   antibody-period =             5760
+2023-02-13 18:48:28   tcell-generation-rate =       105000
+2023-02-13 18:48:28   tcell-initial-delay =         10080
+2023-02-13 18:48:28   tcell-vascular-period =       5760
+2023-02-13 18:48:28   tcell-tissue-period =         1440
+2023-02-13 18:48:28   tcell-binding-period =        10
+2023-02-13 18:48:28   max-binding-prob =            1
+2023-02-13 18:48:28   tcells-follow-gradient =      false
+2023-02-13 18:48:28   seed =                        1
+2023-02-13 18:48:28   sample-period =               0
+2023-02-13 18:48:28   sample-resolution =           1
+2023-02-13 18:48:28   max-block-dim =               10
+2023-02-13 18:48:28   output =                      exp_results/per_5000_inf_0.025/init_999/1
+2023-02-13 18:48:28 _________________________
+2023-02-13 18:48:28 Starting run with 64 processes on 2 nodes at 02/13/23 18:48:28
+2023-02-13 18:48:28 Pinned processes, with process 0 (pid 3891521) pinned to core 0
+2023-02-13 18:48:28 Using block partitioning
+2023-02-13 18:48:28 Initial free memory across all nodes: 150.60GB
+2023-02-13 18:48:28 Starting with 75.58GB free on node 0
+2023-02-13 18:48:28 Dividing 225000000 grid points into 3515625 squares of size 64 (8^2), with 54932 per process
+2023-02-13 18:48:28 Total initial memory required per process is at least 308.46MB with each grid point requiring on average 92 bytes
+2023-02-13 18:48:31  --- Elapsed time for tissue.cpp:Tissue:  (exiting barrier) 2023-02-13 18:48:31 ...
+2023-02-13 18:48:31           ... (min/my/avg/max, bal) (3.46/3.46/3.46/3.46 s, 1.00) barrier(0.00 s) --- 
+2023-02-13 18:48:31 Memory used on node 0 after initialization is  11.75GB
+2023-02-13 18:48:31           ... (min/my/avg/max, bal) No-Time barrier(0.00 s) --- 
+2023-02-13 18:48:31 Fraction of circulating T cells extravasating is 5.85938e-06
+2023-02-13 18:48:31 # datetime                    step    incb       expr       apop       dead       tvas       ttis       inflcell   inflallvirs%infct     <%active  lbln>
+2023-02-13 18:48:31 [0] <main.cpp:145> WARNING: Time step 0: SUCCESSFUL initial infection at (7500, 7500, 0) after 0 tries
+2023-02-13 18:48:31 [02/13/23 18:48:31    0.00s]: 0       1          0          0          0          0          0          0          0          0.00e+00   0.0000004444< 0.000 0.016 >
+2023-02-13 18:48:33 [02/13/23 18:48:33    1.32s]: 4320    825        0          0          0          0          0          0          0          2.93e-05   0.0003666667< 0.004 0.602 >
+2023-02-13 18:48:35 [02/13/23 18:48:35    2.49s]: 8640    6469       0          0          825        0          0          24672      24672      6.97e+01   0.0032417778< 0.014 0.852 >
+2023-02-13 18:48:39 [02/13/23 18:48:39    3.93s]: 12960   7085       224        698        8870       237944624  272        43410      43410      1.65e+05   0.0075008889< 0.019 0.834 >
